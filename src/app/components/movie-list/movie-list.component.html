@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="no-data-movies" *ngIf="totalResults === 0; else moviesList">
+    <img src="assets/images/noFoundResults.png" alt="Logo" />
     <p> No se encontraron resultados para "{{ nameToSearch }}"</p>
 </div>
 
