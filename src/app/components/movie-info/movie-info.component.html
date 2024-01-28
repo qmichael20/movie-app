@@ -1,0 +1,64 @@
+<div class="movie" *ngIf="movie">
+    <div class="button">
+        <div class="back" (click)="goToBack()">
+            <span class="left"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="poster">
+            <img [src]="movie?.Poster" (error)="handleImageError($event)" alt="Poster movie">
+        </div>
+        <div class="info">
+            <div class="title">
+                <p>{{movie?.Title}} <span> ({{movie?.Year}})</span></p>
+            </div>
+
+            <div class="general-info">
+                <div class="rated">
+                    <span>{{movie?.Rated}}</span>
+                </div>
+
+                <span class="text-info">{{movie?.Released}}</span>
+
+                <span class="text-info">{{movie?.Runtime}}</span>
+            </div>
+
+
+            <div class="genre" *ngIf="getGenres(movie?.Genre)?.length > 0">
+                <div class="genre-tag" *ngFor="let genre of getGenres(movie?.Genre)">
+                    <span>{{genre}}</span>
+                </div>
+            </div>
+
+            <div class="plot">
+                <strong>Synopsis</strong>
+                <p>{{movie?.Plot}}</p>
+            </div>
+
+            <div class="persons">
+                <span><strong>Actors: </strong> <i>{{movie?.Actors}}</i></span>
+            </div>
+
+            <div class="persons">
+                <span><strong>Directed by: </strong> <i>{{movie?.Director}}</i></span>
+                <span><strong>Writted by: </strong> <i>{{movie?.Writer}}</i></span>
+            </div>
+
+
+            <div class="rating-movie">
+                <div class="score">
+                    <strong>Score: </strong>
+                    <star-rating [starType]="'svg'" [numOfStars]="5" [readOnly]="true"
+                        [rating]="getRating(+movie.imdbRating)"></star-rating>
+                </div>
+
+                <div class="total-votes">
+                    <p><strong>Total votes: </strong> {{currentVotes | number}}</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

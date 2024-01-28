@@ -1,0 +1,174 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    min-height: 85vh;
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 100%;
+        gap: 30px;
+
+        @media (max-width: 1000px) {
+            flex-direction: column-reverse;
+            min-height: auto;
+        }
+
+        .poster {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                height: 100%;
+                max-width: 350px;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 8px;
+                border: 1px solid white;
+            }
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+
+            gap: 13px;
+
+            .title {
+                display: flex;
+                font-size: 35px;
+                font-weight: 700;
+                gap: 10px;
+
+                p {
+                    margin: 0px;
+                }
+
+                span {
+                    opacity: 0.8;
+                }
+            }
+
+            .general-info {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .rated {
+                padding: 5px;
+                border: 1px solid white;
+                border-radius: 8px;
+            }
+
+            .text-info {
+                &::before {
+                    content: "•";
+                    position: relative;
+                    top: 2px;
+                    color: wheat;
+                    margin-right: 5px;
+                }
+            }
+
+            .genre {
+                display: flex;
+                gap: 5px;
+
+                .genre-tag {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #0e5797;
+                    border-radius: 3px;
+                    padding: 5px;
+                    font-size: 11px;
+                }
+            }
+
+            .plot {
+                margin-top: 15px;
+                text-align: justify;
+            }
+
+            .rating-movie {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 10px;
+
+                .score {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                .total-votes {
+                    display: flex;
+                    gap: 10px;
+                }
+            }
+
+            .persons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    }
+
+    .button {
+        position: fixed;
+        right: 40px;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        .back {
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .back:hover .left {
+            border: 0.5em solid #e74c3c;
+        }
+
+        .back:hover .left:after {
+            border-top: 0.5em solid #e74c3c;
+            border-right: 0.5em solid #e74c3c;
+        }
+
+        .left {
+            display: flex;
+            justify-content: center;
+            width: 4em;
+            height: 4em;
+            border: 0.5em solid white;
+            border-radius: 50%;
+        }
+
+        .left:after {
+            content: "";
+            display: inline-block;
+            margin-top: 1.05em;
+            margin-left: 0.6em;
+            width: 1.4em;
+            height: 1.4em;
+            border-top: 0.5em solid white;
+            border-right: 0.5em solid white;
+            -moz-transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+        }
+    }
+}

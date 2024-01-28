@@ -1,0 +1,31 @@
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.no-data-movies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 80vh;
+}
+
+.result-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+}
+
+.center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mt-70px {
+    margin-top: 70px;
+}

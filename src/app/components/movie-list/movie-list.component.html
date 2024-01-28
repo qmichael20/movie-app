@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="no-data-movies" *ngIf="totalResults === 0; else moviesList">
+    <p> No se encontraron resultados para "{{ nameToSearch }}"</p>
+</div>
+
+<ng-template #moviesList>
+    <div class="mt-70px">
+        <p class="result-info"><em> Se encontraron {{ totalResults }} resultados </em></p>
+        <div class="movie-grid" infiniteScroll [infiniteScrollDistance]="0.25" (scrolled)="onScroll()">
+            <ng-container *ngFor="let movie of movies">
+                <app-card-movie class="center-all" [movie]="movie"></app-card-movie>
+            </ng-container>
+        </div>
+    </div>
+</ng-template>

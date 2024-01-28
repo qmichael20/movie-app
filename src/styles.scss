@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~css-star-rating/css/star-rating.min.css";
+body {
+    background-color: #090e21;
+    margin: 20px;
+}
+
+.star-container {
+    margin: 0px !important;
+}
+
+.rating {
+    margin: 0px !important;
+}

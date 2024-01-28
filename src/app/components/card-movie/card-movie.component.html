@@ -1,0 +1,9 @@
+<div class="movie-card" (click)="goToMovie(movie.imdbID)">
+    <div class="poster">
+        <img [src]="movie.Poster" (error)="handleImageError($event)" alt="{{ movie.Title }}" />
+        <p class="year">{{ movie.Year }}</p>
+    </div>
+    <div class="movie-info">
+        <p>{{ movie.Title }}</p>
+    </div>
+</div>
